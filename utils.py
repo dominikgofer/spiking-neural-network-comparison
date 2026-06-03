@@ -101,6 +101,7 @@ def plot_results(history: list[dict[str, object]], output_dir: Path) -> None:
     axes[1].set_ylabel("Loss")
     axes[1].legend()
 
+    fig.suptitle("ANN vs SNN on MNIST")
     fig.tight_layout()
     fig.savefig(output_dir / "comparison_curves.png", dpi=150)
     plt.close(fig)
@@ -114,6 +115,7 @@ def save_summary(summary: dict[str, object], history: list[dict[str, object]], o
 
     with (output_dir / "comparison.md").open("w", encoding="utf-8") as file:
         file.write("# Porownanie ANN i SNN na MNIST\n\n")
+        file.write("Eksperyment dotyczy klasyfikacji MNIST z porownaniem klasycznej sieci neuronowej i SNN.\n\n")
         file.write("| Model | Test accuracy | Test loss |\n")
         file.write("| --- | ---: | ---: |\n")
         file.write(f"| ANN | {summary['ann_test_accuracy']:.4f} | {summary['ann_test_loss']:.4f} |\n")

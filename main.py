@@ -53,6 +53,7 @@ def main() -> None:
     final_snn_test = evaluate_snn(snn_model, test_loader, device, config.time_steps)
 
     summary = {
+        "dataset": "MNIST",
         "config": config.__dict__,
         "device": str(device),
         "ann_test_loss": final_ann_test[0],

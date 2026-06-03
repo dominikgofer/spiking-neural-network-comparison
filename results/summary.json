@@ -1,4 +1,5 @@
 {
+  "dataset": "MNIST",
   "config": {
     "batch_size": 128,
     "epochs": 3,
