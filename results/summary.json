@@ -1,0 +1,19 @@
+{
+  "config": {
+    "batch_size": 128,
+    "epochs": 3,
+    "hidden_size": 128,
+    "learning_rate": 0.001,
+    "seed": 7,
+    "train_subset_size": 12000,
+    "test_subset_size": 2000,
+    "time_steps": 20,
+    "beta": 0.95
+  },
+  "device": "cpu",
+  "ann_test_loss": 0.26749210953712466,
+  "ann_test_accuracy": 0.9165,
+  "snn_test_loss": 0.18202596843242647,
+  "snn_test_accuracy": 0.948,
+  "snn_test_hidden_spike_rate": 0.1580087903738022
+}
