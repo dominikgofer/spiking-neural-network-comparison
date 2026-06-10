@@ -1,0 +1,74 @@
+[
+  {
+    "model": "ANN",
+    "sigma": 0.0,
+    "accuracy": 0.946,
+    "loss": 0.192872526884079
+  },
+  {
+    "model": "CNN",
+    "sigma": 0.0,
+    "accuracy": 0.961,
+    "loss": 0.14076303052902223
+  },
+  {
+    "model": "SNN",
+    "sigma": 0.0,
+    "accuracy": 0.95,
+    "loss": 0.1922384045124054
+  },
+  {
+    "model": "ANN",
+    "sigma": 0.1,
+    "accuracy": 0.94,
+    "loss": 0.22067076230049135
+  },
+  {
+    "model": "CNN",
+    "sigma": 0.1,
+    "accuracy": 0.959,
+    "loss": 0.14548829329013824
+  },
+  {
+    "model": "SNN",
+    "sigma": 0.1,
+    "accuracy": 0.945,
+    "loss": 0.21740546131134034
+  },
+  {
+    "model": "ANN",
+    "sigma": 0.2,
+    "accuracy": 0.8705,
+    "loss": 0.454814745426178
+  },
+  {
+    "model": "CNN",
+    "sigma": 0.2,
+    "accuracy": 0.95,
+    "loss": 0.1731183726787567
+  },
+  {
+    "model": "SNN",
+    "sigma": 0.2,
+    "accuracy": 0.8815,
+    "loss": 0.42738307881355286
+  },
+  {
+    "model": "ANN",
+    "sigma": 0.3,
+    "accuracy": 0.7075,
+    "loss": 1.081179123878479
+  },
+  {
+    "model": "CNN",
+    "sigma": 0.3,
+    "accuracy": 0.924,
+    "loss": 0.24214242935180663
+  },
+  {
+    "model": "SNN",
+    "sigma": 0.3,
+    "accuracy": 0.697,
+    "loss": 1.1213222055435181
+  }
+]
