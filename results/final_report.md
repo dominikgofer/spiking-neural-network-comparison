@@ -192,134 +192,134 @@ Na sprzecie neuromorphic sytuacja bylaby inna: nieliniowe operacje wykonuja sie 
 
 Poniżej zapisano indeks wszystkich dostępnych wykresów wraz z krótką, opartą na danych interpretacją.
 
-- [comparison_curves.png](./comparison_curves.png) — krzywe accuracy i loss po epokach dla MNIST, tylko dla ANN i SNN.
+- ![comparison_curves.png](./comparison_curves.png) — krzywe accuracy i loss po epokach dla MNIST, tylko dla ANN i SNN.
 
 	Obserwacje: SNN od początku ma wyższy test accuracy niż ANN i utrzymuje przewagę przez trzy epoki, kończąc na 95.0% vs 91.7%. Loss obu modeli spada monotonicznie, a różnica między train i test pozostaje mała, więc w tym krótkim przebiegu nie widać silnego overfittingu.
 
-- [comparison_curves.png](./mnist/comparison_curves.png) — krzywe accuracy i loss po epokach dla MNIST.
+- ![comparison_curves.png](./mnist/comparison_curves.png) — krzywe accuracy i loss po epokach dla MNIST.
 
 	Obserwacje: CNN dochodzi do najwyższego test accuracy 98.15% i najniższego loss, ale ANN i SNN też szybko stabilizują się powyżej 95%. Po około 8-10 epoce przyrosty są już niewielkie, a odległość między train i test nie sugeruje silnego overfittingu.
 
-- [pareto.png](./mnist/pareto.png) — kompromis czas treningu vs końcowa accuracy.
+- ![pareto.png](./mnist/pareto.png) — kompromis czas treningu vs końcowa accuracy.
 
 	Obserwacje: CNN daje najlepszą jakość, ale za cenę około 2x dłuższego treningu niż ANN. SNN ma lepszą accuracy od ANN, lecz jest dużo wolniejszy, więc nie tworzy wyraźnej przewagi Pareto.
 
-- [confusion_matrix_ANN.png](./mnist/confusion_matrix_ANN.png) — macierz pomyłek dla ANN.
+- ![confusion_matrix_ANN.png](./mnist/confusion_matrix_ANN.png) — macierz pomyłek dla ANN.
 
 	Obserwacje: macierz jest silnie diagonalna, ale najsłabsze klasy to 8, 5 i 9, co zgadza się z ich niższym recall w raporcie klasowym. Błędy są raczej rozproszone niż skupione w jednej parze klas.
 
-- [confusion_matrix_CNN.png](./mnist/confusion_matrix_CNN.png) — macierz pomyłek dla CNN.
+- ![confusion_matrix_CNN.png](./mnist/confusion_matrix_CNN.png) — macierz pomyłek dla CNN.
 
 	Obserwacje: obraz jest prawie idealnie diagonalny, a jedyny wyraźniejszy spadek jakości dotyczy klas 3 i 9, choć nadal z wysokim recall powyżej 94%. To potwierdza, że CNN rozdziela cyfry MNIST najczyściej.
 
-- [confusion_matrix_SNN.png](./mnist/confusion_matrix_SNN.png) — macierz pomyłek dla SNN.
+- ![confusion_matrix_SNN.png](./mnist/confusion_matrix_SNN.png) — macierz pomyłek dla SNN.
 
 	Obserwacje: diagonal nadal dominuje, ale błędy są wyraźniejsze niż w CNN, szczególnie dla klas 6, 2 i 9. Mimo tego SNN zachowuje bardzo wysoką jakość na MNIST i tylko nieznacznie odstaje od CNN.
 
-- [raster_SNN.png](./mnist/raster_SNN.png) — raster aktywności spików dla SNN.
+- ![raster_SNN.png](./mnist/raster_SNN.png) — raster aktywności spików dla SNN.
 
 	Obserwacje: hidden layer jest aktywna w wielu neuronach przez większość timestepów, ale spike'i są krótkie i rozproszone, więc kod pozostaje dość rzadki. Output spikes pojawiają się oszczędnie i skupiają się wokół kilku klas, co odpowiada dobrej, ale nie idealnej separacji.
 
-- [latency_vs_batch.png](./mnist/latency_vs_batch.png) — skalowanie opóźnienia z batch size.
+- ![latency_vs_batch.png](./mnist/latency_vs_batch.png) — skalowanie opóźnienia z batch size.
 
 	Obserwacje: ANN ma najniższą latencję dla małych batchy i najlepszą wydajność per sample przy większych batchach. SNN pozostaje najwolniejszy w każdym punkcie, a jego krzywa rośnie zdecydowanie szybciej niż ANN i CNN.
 
-- [noise_robustness.png](./mnist/noise_robustness.png) — accuracy vs sigma szumu Gaussa.
+- ![noise_robustness.png](./mnist/noise_robustness.png) — accuracy vs sigma szumu Gaussa.
 
 	Obserwacje: CNN jest najbardziej odporny, utrzymując 92.4% przy sigma 0.3, gdy ANN i SNN spadają do odpowiednio 70.75% i 69.7%. Przy małym szumie wszystkie modele są blisko siebie, ale przy sigma 0.2 różnica CNN wobec reszty staje się już wyraźna.
 
-- [comparison_curves.png](./fashion-mnist/comparison_curves.png) — krzywe accuracy i loss po epokach dla Fashion-MNIST.
+- ![comparison_curves.png](./fashion-mnist/comparison_curves.png) — krzywe accuracy i loss po epokach dla Fashion-MNIST.
 
 	Obserwacje: wszystkie modele poprawiają się wolniej niż na MNIST, a końcowe wartości zatrzymują się niżej, z CNN na czele (87.78%). SNN ma najwyższy loss i największy rozrzut między epokami, więc na tym zbiorze stabilizuje się najsłabiej.
 
-- [pareto.png](./fashion-mnist/pareto.png) — kompromis czas treningu vs końcowa accuracy.
+- ![pareto.png](./fashion-mnist/pareto.png) — kompromis czas treningu vs końcowa accuracy.
 
 	Obserwacje: ANN jest najszybszy, CNN najbardziej dokładny, a SNN ląduje pomiędzy nimi bez wyraźnej przewagi. Ponieważ zakres accuracy jest wąski, wykres pokazuje raczej koszt złożoności niż wyraźny punkt dominacji.
 
-- [confusion_matrix_ANN.png](./fashion-mnist/confusion_matrix_ANN.png) — macierz pomyłek dla ANN.
+- ![confusion_matrix_ANN.png](./fashion-mnist/confusion_matrix_ANN.png) — macierz pomyłek dla ANN.
 
 	Obserwacje: największe problemy dotyczą klas 6, 4 i 2, które mają wyraźnie niższy recall niż reszta. To dobrze pasuje do obrazu Fashion-MNIST, gdzie podobne kształty ubrań łatwo się nakładają.
 
-- [confusion_matrix_CNN.png](./fashion-mnist/confusion_matrix_CNN.png) — macierz pomyłek dla CNN.
+- ![confusion_matrix_CNN.png](./fashion-mnist/confusion_matrix_CNN.png) — macierz pomyłek dla CNN.
 
 	Obserwacje: CNN poprawia większość klas, ale nadal słabiej rozpoznaje 4, 6 i 2, więc nie rozwiązuje całkowicie podobieństw między kategoriami odzieży. Diagonal jest jednak wyraźnie mocniejsza niż w ANN i SNN.
 
-- [confusion_matrix_SNN.png](./fashion-mnist/confusion_matrix_SNN.png) — macierz pomyłek dla SNN.
+- ![confusion_matrix_SNN.png](./fashion-mnist/confusion_matrix_SNN.png) — macierz pomyłek dla SNN.
 
 	Obserwacje: SNN najsilniej gubi klasę 6, a także 4 i 9, co obniża macro-F1 do najniższego poziomu w tej trójce. Błędy są bardziej rozlane niż w CNN, więc przewaga konwolucji jest tu widoczna także na poziomie pomyłek klas.
 
-- [raster_SNN.png](./fashion-mnist/raster_SNN.png) — raster aktywności spików dla SNN.
+- ![raster_SNN.png](./fashion-mnist/raster_SNN.png) — raster aktywności spików dla SNN.
 
 	Obserwacje: aktywność hidden jest gęstsza i bardziej równomierna niż na MNIST, co pasuje do wyższego hidden spike rate. Output spikes są gęściej rozrzucone po klasach, co sugeruje większą niepewność klasyfikacji.
 
-- [latency_vs_batch.png](./fashion-mnist/latency_vs_batch.png) — skalowanie opóźnienia z batch size.
+- ![latency_vs_batch.png](./fashion-mnist/latency_vs_batch.png) — skalowanie opóźnienia z batch size.
 
 	Obserwacje: ANN zachowuje najniższe opóźnienie na próbkę, a CNN skaluje się sensownie dopiero przy większych batchach. SNN pozostaje wyraźnie wolniejszy i ma większą zmienność przy dużych batchach, więc koszt czasowy nadal dominuje.
 
-- [noise_robustness.png](./fashion-mnist/noise_robustness.png) — accuracy vs sigma szumu Gaussa.
+- ![noise_robustness.png](./fashion-mnist/noise_robustness.png) — accuracy vs sigma szumu Gaussa.
 
 	Obserwacje: na tym zbiorze wszystkie trzy modele degradują się podobnie, a różnice między nimi są małe aż do sigma 0.3. ANN lekko prowadzi przy największym szumie, ale nie ma tu efektu takiej przewagi CNN jak na MNIST.
 
-- [comparison_curves.png](./kmnist/comparison_curves.png) — krzywe accuracy i loss po epokach dla KMNIST.
+- ![comparison_curves.png](./kmnist/comparison_curves.png) — krzywe accuracy i loss po epokach dla KMNIST.
 
 	Obserwacje: CNN od początku utrzymuje wyraźną przewagę i kończy na 89.68% accuracy, podczas gdy ANN i SNN zatrzymują się odpowiednio na 80.80% i 82.43%. SNN poprawia się szybko na starcie, ale po kilku epokach wyraźnie się wypłaszcza.
 
-- [pareto.png](./kmnist/pareto.png) — kompromis czas treningu vs końcowa accuracy.
+- ![pareto.png](./kmnist/pareto.png) — kompromis czas treningu vs końcowa accuracy.
 
 	Obserwacje: CNN jest tu najlepszym punktem, bo daje najwyższą accuracy przy czasie zbliżonym do ANN. SNN jest jednocześnie wolniejszy i słabszy od CNN, więc leży poza sensowną granicą Pareto.
 
-- [confusion_matrix_ANN.png](./kmnist/confusion_matrix_ANN.png) — macierz pomyłek dla ANN.
+- ![confusion_matrix_ANN.png](./kmnist/confusion_matrix_ANN.png) — macierz pomyłek dla ANN.
 
 	Obserwacje: największe braki widać dla klas 6, 2, 7 i 9, czyli tam, gdzie litery znaków są najbardziej podobne. To tłumaczy niższy macro recall w porównaniu z MNIST.
 
-- [confusion_matrix_CNN.png](./kmnist/confusion_matrix_CNN.png) — macierz pomyłek dla CNN.
+- ![confusion_matrix_CNN.png](./kmnist/confusion_matrix_CNN.png) — macierz pomyłek dla CNN.
 
 	Obserwacje: CNN znacząco poprawia separację, ale nadal ma słabsze klasy 2, 4, 7 i 9 niż reszta. Diagonal jest jednak wyraźnie mocniejsza, więc obraz jest spójny z najwyższą accuracy.
 
-- [confusion_matrix_SNN.png](./kmnist/confusion_matrix_SNN.png) — macierz pomyłek dla SNN.
+- ![confusion_matrix_SNN.png](./kmnist/confusion_matrix_SNN.png) — macierz pomyłek dla SNN.
 
 	Obserwacje: SNN najwięcej traci na klasach 8, 5, 9 i 7, a szczególnie niski recall klasy 8 pokazuje słabszą reprezentację bardziej złożonych wzorów. W praktyce macierz jest wyraźnie mniej czysta niż w CNN.
 
-- [raster_SNN.png](./kmnist/raster_SNN.png) — raster aktywności spików dla SNN.
+- ![raster_SNN.png](./kmnist/raster_SNN.png) — raster aktywności spików dla SNN.
 
 	Obserwacje: hidden spikes są bardziej rozciągnięte w czasie, ale średnio rzadsze niż na MNIST i Fashion-MNIST. Output spikes skupiają się na pojedynczych klasach przez większość timestepów, co pasuje do umiarkowanej, ale nie dominującej separacji.
 
-- [latency_vs_batch.png](./kmnist/latency_vs_batch.png) — skalowanie opóźnienia z batch size.
+- ![latency_vs_batch.png](./kmnist/latency_vs_batch.png) — skalowanie opóźnienia z batch size.
 
 	Obserwacje: ANN i CNN utrzymują niskie opóźnienia jednostkowe przy większych batchach, podczas gdy SNN rośnie najtrudniej do zrównoleglenia. Wykres pokazuje, że batch size poprawia throughput, ale nie likwiduje przewagi czasowej prostszych modeli.
 
-- [noise_robustness.png](./kmnist/noise_robustness.png) — accuracy vs sigma szumu Gaussa.
+- ![noise_robustness.png](./kmnist/noise_robustness.png) — accuracy vs sigma szumu Gaussa.
 
 	Obserwacje: CNN zachowuje najlepszą odporność na szum we wszystkich punktach, a przy sigma 0.3 nadal ma 74.4% accuracy. ANN i SNN spadają mocniej i bardzo zbliżają się do siebie na wyższych poziomach szumu.
 
-- [comparison_curves.png](./seq-mnist/comparison_curves.png) — krzywe accuracy i loss po epokach dla Sequential MNIST.
+- ![comparison_curves.png](./seq-mnist/comparison_curves.png) — krzywe accuracy i loss po epokach dla Sequential MNIST.
 
 	Obserwacje: ANN i CNN szybko dochodzą do wysokich wyników, ale SNN pozostaje wyraźnie w tyle i kończy na 76.92% accuracy. Rozjazd lossów między SNN a dwoma klasycznymi modelami utrzymuje się przez cały trening, więc problem nie znika z epoką.
 
-- [pareto.png](./seq-mnist/pareto.png) — kompromis czas treningu vs końcowa accuracy.
+- ![pareto.png](./seq-mnist/pareto.png) — kompromis czas treningu vs końcowa accuracy.
 
 	Obserwacje: ANN i CNN tworzą tu sensowny kompromis między czasem i jakością, a SNN jest jednocześnie wolniejszy i dużo mniej dokładny. To sprawia, że SNN jest tutaj najsłabszym punktem na wykresie Pareto.
 
-- [confusion_matrix_ANN.png](./seq-mnist/confusion_matrix_ANN.png) — macierz pomyłek dla ANN.
+- ![confusion_matrix_ANN.png](./seq-mnist/confusion_matrix_ANN.png) — macierz pomyłek dla ANN.
 
 	Obserwacje: macierz jest nadal mocno diagonalna, ale najsłabiej wypadają klasy 1, 2, 4 i 5, czyli te o większym podobieństwie kształtów. Mimo to ANN utrzymuje bardzo dobrą jakość na poziomie około 95%.
 
-- [confusion_matrix_CNN.png](./seq-mnist/confusion_matrix_CNN.png) — macierz pomyłek dla CNN.
+- ![confusion_matrix_CNN.png](./seq-mnist/confusion_matrix_CNN.png) — macierz pomyłek dla CNN.
 
 	Obserwacje: CNN ma prawie idealną diagonalę i tylko drobne pomyłki w klasach 3, 5 i 8. To odpowiada najwyższej accuracy i pokazuje, że model dobrze wykorzystuje informację sekwencyjną.
 
-- [confusion_matrix_SNN.png](./seq-mnist/confusion_matrix_SNN.png) — macierz pomyłek dla SNN.
+- ![confusion_matrix_SNN.png](./seq-mnist/confusion_matrix_SNN.png) — macierz pomyłek dla SNN.
 
 	Obserwacje: SNN myli znacznie więcej klas, szczególnie 2, 5, 7, 8 i 9, co zgadza się z niskim recall tych kategorii. Wykres jest dużo mniej skoncentrowany na przekątnej niż w ANN i CNN, więc błąd nie jest lokalny, tylko systemowy.
 
-- [raster_SNN.png](./seq-mnist/raster_SNN.png) — raster aktywności spików dla SNN.
+- ![raster_SNN.png](./seq-mnist/raster_SNN.png) — raster aktywności spików dla SNN.
 
 	Obserwacje: hidden activity jest wyraźnie rzadsza i bardziej przesunięta do późniejszych timestepów niż w rate-coded MNIST. Output spikes są rozproszone po wielu klasach, co wizualnie pasuje do słabszej separacji i najniższego spike rate.
 
-- [latency_vs_batch.png](./seq-mnist/latency_vs_batch.png) — skalowanie opóźnienia z batch size.
+- ![latency_vs_batch.png](./seq-mnist/latency_vs_batch.png) — skalowanie opóźnienia z batch size.
 
 	Obserwacje: ANN pozostaje najszybszy, CNN jest wyraźnie droższy, ale nadal dużo szybszy od SNN. Dla SNN sama zmiana batch size nie usuwa kosztu pętli czasowej, więc wykres pokazuje głównie przesunięcie ciężaru pracy, a nie realne odwrócenie hierarchii modeli.
 
-- [noise_robustness.png](./seq-mnist/noise_robustness.png) — accuracy vs sigma szumu Gaussa.
+- ![noise_robustness.png](./seq-mnist/noise_robustness.png) — accuracy vs sigma szumu Gaussa.
 
 	Obserwacje: CNN pozostaje stabilny nawet przy sigma 0.3 i kończy na 90.0%, podczas gdy ANN spada do 68.6%. SNN jest najbardziej wrażliwy, bo po niewielkim szumie jego accuracy gwałtownie się załamuje i przy sigma 0.3 dochodzi tylko do 20.0%.
